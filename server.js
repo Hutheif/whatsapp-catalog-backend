@@ -11,14 +11,7 @@ const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 const CATALOG_ID = process.env.CATALOG_ID;
 
 // ✅ Enable CORS (allow frontend requests)
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5174",
-      "https://your-frontend-domain.vercel.app",
-    ], // add both local + deployed URLs
-  })
-);
+app.use(cors({ origin: "*" }));
 
 app.get("/", (req, res) => {
   res.send("✅ WhatsApp Catalog API is live!");
